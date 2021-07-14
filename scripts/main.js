@@ -1,15 +1,12 @@
-namespace Questionaries {
-
+"use strict";
+var Questionaries;
+(function (Questionaries) {
     //let currentState: String = "mainmenu";
-
     document.getElementById("inputField").onkeydown = evalInput;
-
-    function evalInput(event: KeyboardEvent): void {
-
+    function evalInput(event) {
         if (event.key != "Enter")
             return;
-
-        let input: number = parseInt((document.getElementById("inputField") as HTMLInputElement).value);
+        let input = parseInt(document.getElementById("inputField").value);
         console.log("and his name is " + input);
         /* switch (currentState) {
             case "mainmenu": {
@@ -17,4 +14,5 @@ namespace Questionaries {
             }
         } */
     }
-}
+})(Questionaries || (Questionaries = {}));
+//# sourceMappingURL=main.js.map
