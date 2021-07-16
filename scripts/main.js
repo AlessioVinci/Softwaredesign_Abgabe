@@ -1,18 +1,21 @@
 "use strict";
-var Questionaries;
-(function (Questionaries) {
-    //let currentState: String = "mainmenu";
+var QuestionariesProject;
+(function (QuestionariesProject) {
+    let currentState = "mainmenu";
     document.getElementById("inputField").onkeydown = evalInput;
     function evalInput(event) {
         if (event.key != "Enter")
             return;
         let input = parseInt(document.getElementById("inputField").value);
-        console.log("and his name is " + input);
-        /* switch (currentState) {
+        switch (currentState) {
             case "mainmenu": {
-                mainmenu[input];
+                QuestionariesProject.mainmenu_options[input - 1]();
+                break;
             }
-        } */
+            default: {
+                break;
+            }
+        }
     }
-})(Questionaries || (Questionaries = {}));
+})(QuestionariesProject || (QuestionariesProject = {}));
 //# sourceMappingURL=main.js.map

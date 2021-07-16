@@ -1,6 +1,7 @@
-namespace Questionaries {
+namespace QuestionariesProject {
 
-    //let currentState: String = "mainmenu";
+
+    let currentState: String = "mainmenu";
 
     document.getElementById("inputField").onkeydown = evalInput;
 
@@ -8,13 +9,16 @@ namespace Questionaries {
 
         if (event.key != "Enter")
             return;
-
         let input: number = parseInt((document.getElementById("inputField") as HTMLInputElement).value);
-        console.log("and his name is " + input);
-        /* switch (currentState) {
+
+        switch (currentState) {
             case "mainmenu": {
-                mainmenu[input];
+                QuestionariesProject.mainmenu_options[input - 1]();
+                break;
             }
-        } */
+            default: {
+                break;
+            }
+        }
     }
 }
