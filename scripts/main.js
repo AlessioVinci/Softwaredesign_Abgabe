@@ -25,5 +25,27 @@ var QuestionariesProject;
             }
         }
     }
+    function loadJSON(url, callback) {
+        const request = new XMLHttpRequest();
+        request.overrideMimeType("application/json");
+        request.open("GET", url);
+        request.onreadystatechange = () => {
+            if (request.readyState === 4 && request.status === 200) {
+                let obj = JSON.parse(request.responseText);
+                callback(obj);
+            }
+        };
+        request.send(null);
+    }
+    function checkLogin(username, password, callback) {
+        loadJSON("./jsons/data.json", (response) => {
+            let found = false;
+            for (let dataset of response.logins) {
+                if (dataset.username === username && dataset.password === password)
+                    found = true;
+            }
+            callback(found);
+        });
+    }
 })(QuestionariesProject || (QuestionariesProject = {}));
 //# sourceMappingURL=main.js.map

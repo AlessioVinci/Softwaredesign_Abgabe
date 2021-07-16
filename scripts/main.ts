@@ -26,4 +26,31 @@ namespace QuestionariesProject {
             }
         }
     }
+
+    function loadJSON(url: string, callback: (response: object) => void): void {
+        const request: XMLHttpRequest = new XMLHttpRequest();
+        request.overrideMimeType("application/json");
+        request.open("GET", url);
+        request.onreadystatechange = () => {
+            if (request.readyState === 4 && request.status === 200) {
+                let obj = JSON.parse(request.responseText);
+                callback(obj);
+            }
+        };
+        request.send(null);
+    }
+
+
+
+
+    function checkLogin(username: string, password: string, callback: (found: boolean) => void): void {
+        loadJSON("./jsons/data.json", (response: any) => {
+            let found: boolean = false;
+            for (let dataset of response.logins) {
+                if (dataset.username === username && dataset.password === password)
+                    found = true;
+            }
+            callback(found);
+        });
+    }
 }
