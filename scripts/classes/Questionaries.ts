@@ -3,5 +3,8 @@ namespace QuestionariesProject {
         id: number;
         title: string;
         questions: Questions[];
+        startDate: Date;
+        endDate: Date;
+        creatorID: number;
     }
 }

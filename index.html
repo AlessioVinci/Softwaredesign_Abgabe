@@ -7,6 +7,7 @@
     <title>Questionaries Application</title>
     <meta name="description" content="A simple questionary application">
     <link rel="stylesheet" href="css/main.css?v=1.0">
+    <script defer src="scripts/states.js"></script>
     <script defer src="scripts/menus/menus.js"></script>
     <script defer src="scripts/main.js"></script>
 </head>
@@ -17,16 +18,17 @@
     </h1>
     <div class="gradient-border">
         <div id="output">
-            <span>Zombie ipsum reversus:</span> </br> </br>
-            <span>> ab viral inferno</span> </br>
-            <span>> Summus brains sit</span> </br>
-            <span>> Hi mindless mortuis</span> </br>
-            <span>> Zonbi tattered for solum</span> </br>
-            <span>> Sicut malus putrid</span>
+            <span>Willkommen bei Q(_)35710N4R135, bitte wählen Sie eine Option:</span>
+            <ol>
+                <li>Alle Umfragen anzeigen</li>
+                <li>Statistik anzeigen</li>
+                <li>Anmelden</li>
+                <li>Registrieren</li>
+            </ol>
         </div>
         <div id="input">
             <label for="fname">Input:</label>
-            <input id="inputField" type="text" />
+            <input id="inputField" placeholder="Example: '1'" type="text" />
         </div>
     </div>
 </body>
